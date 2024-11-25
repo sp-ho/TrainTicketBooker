@@ -1,0 +1,83 @@
+﻿<Window x:Class="TicketTest.Testing"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TicketTest"
+        mc:Ignorable="d"
+        Title="Testing" Height="450" Width="500">
+
+    <Grid RenderTransformOrigin="0.506,0.49">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Column 1 -->
+        <Grid Grid.Column="0" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <TextBlock x:Name="lbDepTime" Text="Departure Time" Grid.Row="0" HorizontalAlignment="Center" />
+            <TextBlock x:Name="lbDepCity" Text="Departure City" Grid.Row="1" Margin="0,0,0,10" HorizontalAlignment="Center" />
+            <Button x:Name="btnTicket11" Content="Ticket Option 1" Grid.Row="2" Margin="27,0,27,-53" />
+        </Grid>
+
+        <!-- Column 2 -->
+        <Grid Grid.Column="1" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="Travel Duration" Grid.Row="0" HorizontalAlignment="Center" />
+            <Button x:Name="btnTicket12" Content="Ticket Option 2" Grid.Row="2" Margin="30,25,34,-78" />
+            <TextBlock Text="Travel Duration" Grid.Row="2" HorizontalAlignment="Center" Margin="0,100,0,-116" />
+            <Button x:Name="btnTicket22" Content="Ticket Option 2" Grid.Row="2" Margin="30,141,34,-194" />
+            <TextBlock Text="Travel Duration" Grid.Row="2" HorizontalAlignment="Center" Margin="0,206,0,-222" />
+            <Button x:Name="btnTicket32" Content="Ticket Option 2" Grid.Row="2" Margin="30,247,34,-300" />
+        </Grid>
+
+        <!-- Column 3 -->
+        <Grid Grid.Column="2" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="Arrival Time" Grid.Row="0" HorizontalAlignment="Center" />
+            <TextBlock Text="Arrival Destination" Grid.Row="1" HorizontalAlignment="Center" Margin="0,0,0,-20" Grid.RowSpan="2" />
+            <Button x:Name="btnTicket13" Content="Ticket Option 3" Grid.Row="2" Margin="28,25,26,-78" />
+            <TextBlock Text="Arrival Time" Grid.Row="2" HorizontalAlignment="Center" Margin="0,99,0,-115" />
+            <TextBlock Text="Arrival Destination" Grid.Row="1" HorizontalAlignment="Center" Margin="0,115,0,-135" Grid.RowSpan="2" />
+            <Button x:Name="btnTicket23" Content="Ticket Option 3" Grid.Row="2" Margin="28,140,26,-193" />
+            <TextBlock Text="Arrival Time" Grid.Row="2" HorizontalAlignment="Center" Margin="0,207,0,-223" />
+            <TextBlock Text="Arrival Destination" Grid.Row="1" HorizontalAlignment="Center" Margin="0,223,0,-243" Grid.RowSpan="2" />
+            <Button x:Name="btnTicket33" Content="Ticket Option 3" Grid.Row="2" Margin="27,248,27,-301" />
+        </Grid>
+        <Label x:Name="lblFrom" Content="From" HorizontalAlignment="Center" Margin="0,26,0,0" VerticalAlignment="Top" Height="45" Width="91" FontSize="22"/>
+        <Label x:Name="lblDeparture" Content="Departure" HorizontalAlignment="Left" Margin="117,26,0,0" VerticalAlignment="Top" Height="45" Width="116" FontSize="22" Grid.ColumnSpan="2"/>
+        <Label x:Name="lblTo" Content="To" HorizontalAlignment="Left" Margin="107,26,0,0" VerticalAlignment="Top" Height="45" Width="91" FontSize="22" Grid.Column="1" Grid.ColumnSpan="2"/>
+        <Label x:Name="lblDestination" Content="Destination" HorizontalAlignment="Center" Margin="0,26,0,0" VerticalAlignment="Top" Height="45" Width="125" FontSize="22" Grid.Column="2"/>
+        <TextBlock Text="Departure Time" Grid.Row="2" HorizontalAlignment="Center" Margin="0,4,0,89" />
+        <TextBlock Text="Departure City" Margin="0,20,0,73" HorizontalAlignment="Center" Grid.Row="2" />
+        <Button x:Name="btnTicket21" Content="Ticket Option 1" Margin="27,46,27,10" Grid.Row="2" />
+        <TextBlock Text="Departure Time" Grid.Row="3" HorizontalAlignment="Center" Margin="0,4,0,89" />
+        <TextBlock Text="Departure City" Margin="0,20,0,73" HorizontalAlignment="Center" Grid.Row="3" />
+        <Button x:Name="btnTicket31" Content="Ticket Option 1" Margin="27,46,27,10" Grid.Row="3" />
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+    </Grid>
+</Window>

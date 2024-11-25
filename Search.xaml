@@ -1,0 +1,113 @@
+﻿<Window x:Class="TicketTest.Search"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TicketTest"
+        xmlns:shell="clr-namespace:System.Windows.Shell;assembly=PresentationFramework"
+        mc:Ignorable="d"
+        Title="Search" 
+        Height="539" 
+        Width="628"
+        AllowsTransparency="True"
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen"
+        Background="Transparent" >
+    <Window.Resources>
+        <Style x:Key="RoundedButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="LightBlue"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="Padding" Value="10"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Background}"
+                                BorderBrush="DarkGray"
+                                BorderThickness="2"
+                                CornerRadius="18">
+                            <ContentPresenter HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Border Background="#E5E5E5"
+                BorderBrush="#ADD8E6"
+                BorderThickness="5"
+                CornerRadius="8,8,8,8" 
+                Grid.RowSpan="7" 
+            Margin="0">
+        <Grid Background="#FFEFE7E7" Margin="10,10,10,8">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="204*"/>
+                <RowDefinition Height="63*"/>
+                <RowDefinition Height="6*"/>
+                <RowDefinition Height="98*"/>
+                <RowDefinition Height="66*"/>
+                <RowDefinition Height="59*"/>
+                <RowDefinition Height="16*"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="WHERE DO YOU WANT TO GO?" FontWeight="Bold" FontFamily="Arial" TextWrapping="Wrap" FontSize="24" Margin="16,16,142,74" />
+            <Label Content="Label" HorizontalAlignment="Left" Height="0" Margin="169,0,0,0" Grid.Row="1" VerticalAlignment="Center" Width="49"/>
+            <Button x:Name="btnContinue" Click="btnContinue_Click" Content="CONTINUE" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FF2364AD" BorderBrush="#FF2364AD" Foreground="White" FontSize="18" Width="184" Height="44" Margin="390,183,0,0" Grid.RowSpan="2">
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="5">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+            <TextBox x:Name="tbFrom" TextWrapping="Wrap" Text="From" FontFamily="Arial" FontWeight="Bold" VerticalContentAlignment="Center" Padding="10,0,0,0" Foreground="#FF635F5F" GotFocus="tbFrom_GotFocus" Margin="16,92,24,74" >
+                <TextBox.Effect>
+                    <DropShadowEffect ShadowDepth="2" Color="Black" Opacity="0.5"/>
+                </TextBox.Effect>
+                <TextBox.Template>
+                    <ControlTemplate TargetType="{x:Type TextBox}">
+                        <Border Background="White" BorderBrush="Black" BorderThickness="1" CornerRadius="5">
+                            <ScrollViewer x:Name="PART_ContentHost" />
+                        </Border>
+                    </ControlTemplate>
+                </TextBox.Template>
+            </TextBox>
+            <TextBox x:Name="tbTo" TextWrapping="Wrap" Text="To" FontFamily="Arial" FontWeight="Bold" VerticalContentAlignment="Center" Padding="10,0,0,0" Foreground="#FF635F5F" GotFocus="tbTo_GotFocus" Margin="16,135,24,31" >
+                <TextBox.Effect>
+                    <DropShadowEffect ShadowDepth="2" Color="Black" Opacity="0.5"/>
+                </TextBox.Effect>
+                <TextBox.Template>
+                    <ControlTemplate TargetType="{x:Type TextBox}">
+                        <Border Background="White" BorderBrush="Black" BorderThickness="1" CornerRadius="5">
+                            <ScrollViewer x:Name="PART_ContentHost" />
+                        </Border>
+                    </ControlTemplate>
+                </TextBox.Template>
+            </TextBox>
+
+            <Grid Margin="0,0,0,55" Grid.RowSpan="2"/>
+            <Button x:Name="btnClose" Style="{StaticResource RoundedButtonStyle}" Content="x" FontWeight="Bold" HorizontalAlignment="Left" Margin="561,10,0,0" VerticalAlignment="Top" Background="#FF2364AD" BorderBrush="{x:Null}" FontSize="18" FontFamily="Arial" RenderTransformOrigin="2.125,0.285" Foreground="#FFEDEAEA" Click="btnClose_Click" Height="32" Width="27" VerticalContentAlignment="Top" HorizontalContentAlignment="Center"/>
+            <ComboBox x:Name="cbCategory" SelectedIndex="0" Text="Select an option..." HorizontalAlignment="Left" Margin="18,183,0,0" VerticalAlignment="Top" Width="122" Grid.RowSpan="2" Height="22">
+                <!-- <ComboBoxItem IsEnabled="False">Select an option...</ComboBoxItem> -->
+                <ComboBoxItem Content="Regular Class"/>
+                <ComboBoxItem Content="First Class"/>
+            </ComboBox>
+            <DatePicker x:Name="dpDate" HorizontalAlignment="Left" Margin="190,180,0,0" VerticalAlignment="Top" Width="122" RenderTransformOrigin="0.979,-1.042" Grid.RowSpan="2" Height="24"/>
+            <DataGrid x:Name="Result" Grid.Row="1" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,45,0,0" Grid.RowSpan="4"/>
+            <Button x:Name="btnBookTicket" Content="BOOK TICKET" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FF2364AD" BorderBrush="#FF2364AD" Foreground="White" FontSize="18" Width="184" Height="44" Margin="390,15,0,0" Grid.Row="5" Click="btnBookTicket_Click">
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="5">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+
+
+        </Grid>
+    </Border>
+</Window>
