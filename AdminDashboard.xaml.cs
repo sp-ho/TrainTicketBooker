@@ -32,7 +32,7 @@ namespace TicketTest
         public async void showData()
         {
             // API endpoint for searching tickets based on date
-            string apiUrl = "https://localhost:7203/api/Ticket/";
+            string apiUrl = "https://localhost:1234/api/Ticket/";
 
 
             using (HttpClient client = new HttpClient())
