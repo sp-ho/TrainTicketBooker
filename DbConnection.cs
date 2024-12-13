@@ -25,8 +25,8 @@ namespace TicketTest
             // Define the values of server host, database name, username, and password.  
             // Values maybe different for different individual's system
             string server = "Server=localhost;";
-            string dbName = "Database=vanierAECWinter2023;";
-            string username = "User=sa;";
+            string dbName = "Database=yourDB;";
+            string username = "User=username;";
             string password = "Password=1234;"; // key in your SQL server password
 
             // Combine the strings above database connection string
